@@ -1,4 +1,4 @@
-# LIBRA STABLECOIN
+# LIBRA PROTOCOL
  
 ### Setup
 `yarn install`

@@ -10,7 +10,7 @@ import { useSupportedChainId } from 'hooks/useSupportedChainId'
 import useApproveCallback, { ApprovalState } from 'hooks/useApproveCallback'
 import useMinterDaiCallback from 'hooks/useMinterDaiCallback'
 import { tryParseAmount } from 'utils/parse'
-import { DAI_TOKEN, DEI_TOKEN, DEUS_TOKEN, USDC_TOKEN } from 'constants/tokens'
+import { DAI_TOKEN, LIBRA_TOKEN, DEUS_TOKEN, USDC_TOKEN } from 'constants/tokens'
 import { PoolDAI } from 'constants/addresses'
 
 import { PrimaryButton } from 'components/Button'
@@ -68,7 +68,7 @@ export default function Mint() {
   const toggleWalletModal = useWalletModalToggle()
   const isSupportedChainId = useSupportedChainId()
   const [amountIn, setAmountIn] = useState('')
-  const deiCurrency = DEI_TOKEN
+  const deiCurrency = LIBRA_TOKEN
   const daiCurrency = DAI_TOKEN
   const deiCurrencyBalance = useCurrencyBalance(account ?? undefined, daiCurrency)
 

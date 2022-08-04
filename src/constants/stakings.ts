@@ -1,5 +1,5 @@
 import { Token } from '@sushiswap/core-sdk'
-import { BDEI_TOKEN, DEI_BDEI_LP_TOKEN } from 'constants/tokens'
+import { BLIBRA_TOKEN, DEI_BDEI_LP_TOKEN } from 'constants/tokens'
 
 export type StakingType = {
   name: string
@@ -22,7 +22,7 @@ export const StakingPools: StakingType[] = [
   {
     name: 'LIBRA',
     pid: 0,
-    token: BDEI_TOKEN,
+    token: BLIBRA_TOKEN,
     provideLink: '/deibonds',
   },
   {

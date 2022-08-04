@@ -1,11 +1,10 @@
 import { formatUnits } from '@ethersproject/units'
 import { ProtocolHoldings1, ProtocolHoldings2, SwapFlashLoan, USDCReserves1, USDCReserves2 } from 'constants/addresses'
 import { SupportedChainId } from 'constants/chains'
-import { BDEI_TOKEN, DAI_TOKEN, DEI_TOKEN, USDC_TOKEN } from 'constants/tokens'
+import { DAI_TOKEN, LIBRA_TOKEN, USDC_TOKEN } from 'constants/tokens'
 import { useMemo } from 'react'
 import { useSingleContractMultipleMethods } from 'state/multicall/hooks'
 import { toBN } from 'utils/numbers'
-import { useBonderData } from './useBondsPage'
 import { useERC20Contract, useMinterContract, useMinterDAIContract, useTokenContract } from './useContract'
 
 export function useDeiStats(): {
@@ -19,7 +18,6 @@ export function useDeiStats(): {
   totalReserves: number
   
 } {
-  const { deiBonded } = useBonderData()
   const deiContract = useTokenContract()
   const minterContract = useMinterContract()?.address
   const minterdaiContract = useMinterDAIContract()?.address
@@ -58,8 +56,8 @@ export function useDeiStats(): {
   }, [totalSupplyDEI, mamount, ramount])
 
   const circulatingSupply = useMemo(() => {
-    return totalSupplyDEIValue - totalProtocolHoldings - deiBonded
-  }, [totalSupplyDEIValue, totalProtocolHoldings, deiBonded])
+    return totalSupplyDEIValue - totalProtocolHoldings 
+  }, [totalSupplyDEIValue, totalProtocolHoldings])
 
   const reservesCalls = !usdcContract
     ? []

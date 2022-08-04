@@ -35,15 +35,15 @@ export default function NavLogo() {
 
   return (
     <Container>
-      <ExternalLink href="https://dei.finance" target="_self" passHref>
+      <ExternalLink href="https://libra.finance" target="_self" passHref>
         <Wrapper>
           <div>
-            <Image src={'/static/images/DeiLogo.svg'} alt="App Logo" width={60} height={60} />
+            <Image src={'/static/images/libraLogo.svg'} alt="App Logo" width={60} height={60} />
           </div>
           {!isMobile && (
             <div>
               <Image
-                src={darkMode ? '/static/images/DeiText.png' : '/static/images/DeiText.png'}
+                src={darkMode ? '/static/images/libraText.png' : '/static/images/libraText.png'}
                 width={130}
                 height={90}
                 alt="App Logo"

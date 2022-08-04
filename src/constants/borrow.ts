@@ -5,7 +5,7 @@ import { SupportedChainId } from 'constants/chains'
 import BASE_V1_MAIN_PAIR from 'constants/abi/BASE_V1_MAIN_PAIR.json'
 
 // TODO SWITCH THIS TOKEN WITH THE BELOW COMMENTED OUT TOKEN FOR PRODUCTION RELEASE
-/* export const DEI_TOKEN = new Token(
+/* export const LIBRA_TOKEN = new Token(
   SupportedChainId.FANTOM,
   '0x4A4573B03B0800e24dEcD8fE497BFeD98ee344B8',
   18,
@@ -13,7 +13,7 @@ import BASE_V1_MAIN_PAIR from 'constants/abi/BASE_V1_MAIN_PAIR.json'
   'TestDEI'
 ) */
 
-export const DEI_TOKEN = new Token(
+export const LIBRA_TOKEN = new Token(
   SupportedChainId.FANTOM,
   '0xDE12c7959E1a72bbe8a5f7A1dc8f8EeF9Ab011B3',
   18,

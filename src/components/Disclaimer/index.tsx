@@ -3,7 +3,7 @@ import Image from 'next/image'
 import styled from 'styled-components'
 
 import { ExternalLink } from 'components/Link'
-import DeiLogo from '/public/static/images/DeiLogoFull.png'
+import LibraLogo from '/public/static/images/libraLogoFull.png'
 
 const Wrapper = styled.div`
   display: flex;
@@ -25,7 +25,7 @@ const Wrapper = styled.div`
 export default function Disclaimer() {
   return (
     <Wrapper>
-      <Image src={DeiLogo} alt="DEI Logo" height="120px" width="220px" />
+      <Image src={LibraLogo} alt="LIBRA Logo" height="120px" width="220px" />
       <ExternalLink href="https://libraprotocol.finance" style={{ opacity: 0.5 }}>
         {new Date().getFullYear()} Libra Protocol. All rights to the people.
       </ExternalLink>

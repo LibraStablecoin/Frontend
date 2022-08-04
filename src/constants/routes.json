@@ -12,17 +12,12 @@
     "exact": true
   },
   {
-    "id": "5",
+    "id": "3",
     "text":"Mint",
     "path":"/mint",
      "exact": true
-  },
-  {
-    "id": "3",
-    "text": "Staking", 
-    "path": "/deibonds/pools" ,
-    "exact": true
   }
+  
   
  
 ]

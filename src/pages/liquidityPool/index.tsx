@@ -13,7 +13,7 @@ import { DotFlashing } from 'components/Icons'
 import Hero from 'components/Hero'
 import Disclaimer from 'components/Disclaimer'
 import InputBox from 'components/App/Redemption/InputBox'
-import { DEI_TOKEN, BDEI_TOKEN } from 'constants/tokens'
+import { LIBRA_TOKEN, BLIBRA_TOKEN } from 'constants/tokens'
 import { useAddLiquidity, useRemoveLiquidity } from 'hooks/useStablePoolInfo'
 import useManageLiquidity from 'hooks/useLiquidityCallback'
 import { StablePools } from 'constants/sPools'
@@ -107,8 +107,8 @@ export default function LiquidityPool() {
   const [selected, setSelected] = useState<ActionTypes>(ActionTypes.ADD)
   const isRemove = useMemo(() => selected == ActionTypes.REMOVE, [selected])
   const [slippage, setSlippage] = useState(0.5)
-  const deiCurrency = DEI_TOKEN
-  const bdeiCurrency = BDEI_TOKEN
+  const deiCurrency = LIBRA_TOKEN
+  const bdeiCurrency = BLIBRA_TOKEN
   const pool = StablePools[0]
   const lpCurrency = pool.lpToken
   const deiCurrencyBalance = useCurrencyBalance(account ?? undefined, deiCurrency)

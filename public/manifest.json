@@ -1,11 +1,11 @@
 {
-  "short_name": "DEI",
-  "name": "DEI Solidly",
+  "short_name": "LIBRA",
+  "name": "LIBRA PROTOCOL",
   "background_color": "#000000",
   "theme_color": "#000000",
   "display": "standalone",
-  "homepage_url": "https://solidly.dei.finance",
-  "providedBy": { "name": "DEI Finance", "url": "https://solidly.dei.finance" },
+  "homepage_url": "https://solidly.LIBRA.finance",
+  "providedBy": { "name": "LIBRA PROTOCOL", "url": "https://solidly.LIBRA.finance" },
   "icons": [
     {
       "src": "./images/192x192_App_Icon.png",
@@ -21,7 +21,7 @@
     }
   ],
   "orientation": "portrait",
-  "description": "veNFTs with DEI Finance",
+  "description": "LIBRA ",
   "iconPath": "./images/512x512_App_Icon.png",
   "start_url": "/"
 }

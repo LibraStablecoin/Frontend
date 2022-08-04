@@ -12,7 +12,7 @@ import useRedemptionCallback from 'hooks/useRedemptionCallback'
 import useCollectCallback from 'hooks/useCollectCallback'
 import { useRedeemAmountsOut, useRedeemData } from 'hooks/useRedemptionPage'
 import { tryParseAmount } from 'utils/parse'
-import { DEI_TOKEN, DEUS_TOKEN, USDC_TOKEN } from 'constants/tokens'
+import { LIBRA_TOKEN, DEUS_TOKEN, USDC_TOKEN } from 'constants/tokens'
 import { Pool } from 'constants/addresses'
 
 import { PrimaryButton } from 'components/Button'
@@ -73,7 +73,7 @@ export default function Redemption() {
   const toggleWalletModal = useWalletModalToggle()
   const isSupportedChainId = useSupportedChainId()
   const [amountIn, setAmountIn] = useState('')
-  const deiCurrency = DEI_TOKEN
+  const deiCurrency = LIBRA_TOKEN
   const usdcCurrency = USDC_TOKEN
   const deiCurrencyBalance = useCurrencyBalance(account ?? undefined, deiCurrency)
 

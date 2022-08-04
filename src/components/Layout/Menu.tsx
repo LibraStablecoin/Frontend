@@ -104,14 +104,7 @@ export default function Menu() {
             </Row>
           </Link>
          
-          <Link href="/deibonds/pools" passHref>
-            <Row active={router.route === '/deibonds/pools'}>
-              <div>Pools</div>
-              <IconWrapper>
-                <PortfolioIcon size={20} />
-              </IconWrapper>
-            </Row>
-          </Link>
+          
         
           
           <ExternalLink href="https://twitter.com/">

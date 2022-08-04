@@ -11,7 +11,7 @@ import { tryParseAmount } from 'utils/parse'
 import { PrimaryButton } from 'components/Button'
 import Hero from 'components/Hero'
 import Disclaimer from 'components/Disclaimer'
-import { DEI_TOKEN, BDEI_TOKEN } from 'constants/tokens'
+import { LIBRA_TOKEN, BLIBRA_TOKEN } from 'constants/tokens'
 import { MasterChefV2 } from 'constants/addresses'
 import StakeBox from 'components/App/deiPool/StakeBox'
 import { useGetApy, useStakingData } from 'hooks/useBdeiStakingPage'
@@ -105,8 +105,8 @@ export default function Redemption() {
   const isSupportedChainId = useSupportedChainId()
   const [amountIn, setAmountIn] = useState('')
   const [amountIn2, setAmountIn2] = useState('')
-  const deiCurrency = DEI_TOKEN
-  const bdeiCurrency = BDEI_TOKEN
+  const deiCurrency = LIBRA_TOKEN
+  const bdeiCurrency = BLIBRA_TOKEN
   const deiCurrencyBalance = useCurrencyBalance(account ?? undefined, deiCurrency)
   const bdeiCurrencyBalance = useCurrencyBalance(account ?? undefined, bdeiCurrency)
   const masterChefContract = useMasterChefV2Contract()

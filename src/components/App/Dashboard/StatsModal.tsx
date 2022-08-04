@@ -2,8 +2,6 @@ import { Loader } from 'components/Icons'
 import { Modal, ModalHeader } from 'components/Modal'
 import { RowBetween } from 'components/Row'
 import { StakingPools, vDeusStakingPools } from 'constants/stakings'
-import { useTokenPerBlock } from 'hooks/useBdeiStakingPage'
-import { useBonderData, useGetRedeemTime } from 'hooks/useBondsPage'
 import { useDeiPrice, useDeusPrice } from 'hooks/useCoingeckoPrice'
 import useDebounce from 'hooks/useDebounce'
 import { useDeiStats } from 'hooks/useDeiStats'
@@ -18,9 +16,7 @@ import { formatDollarAmount, formatAmount } from 'utils/numbers'
 import { getRemainingTime } from 'utils/time'
 import { Dashboard } from './DeiStats'
 import Link from 'next/link'
-import { getMaximumDate } from 'utils/vest'
-import { useVestedAPY } from 'hooks/useVested'
-import { useVDeusStats } from 'hooks/useVDeusStats'
+
 import { useGetApr, usePoolInfo } from 'hooks/useVDeusStaking'
 import { useGetApy } from 'hooks/useStakingInfo'
 
@@ -108,16 +104,12 @@ export default function StatsModal({ stat }: { stat: Dashboard }) {
 
   const {price} = useDeiPrice()
 
-  const { deiBonded } = useBonderData()
-  const { totalDeposited } = useTokenPerBlock()
 
   const pools = useBorrowPools()
   const { borrowedElastic } = useGlobalDEIBorrowed(pools)
 
   const debouncedAmountIn = useDebounce('', 500)
-  const { redeemTime } = useGetRedeemTime(debouncedAmountIn || '0')
-  const { day, hours } = getRemainingTime(redeemTime)
-  const roundedDays = day + (hours > 12 ? 1 : 0) //adds 1 more day if remained hours is above 12 hours.
+  
 
   const { pid: deiPID } = StakingPools[0] //bDEI single staking pool
   const bDeiSingleStakingAPR = useGetApy(deiPID)
@@ -140,9 +132,7 @@ export default function StatsModal({ stat }: { stat: Dashboard }) {
 
   const showLoader = false
 
-  const { lockedVeDEUS } = useVestedAPY(undefined, getMaximumDate())
   const deusPrice = useDeusPrice()
-  const { numberOfVouchers, listOfVouchers } = useVDeusStats()
 
   const vDEUS3MonthsPool = vDeusStakingPools[0] // vDEUS staked for 3 Months
   const { totalDeposited: totalDepositedFor3Months } = usePoolInfo(vDEUS3MonthsPool.pid)
@@ -251,7 +241,6 @@ export default function StatsModal({ stat }: { stat: Dashboard }) {
             </div>
             <ModalInfoWrapper>
               <p>Total DEI Bonded</p>
-              {deiBonded == 0 ? <Loader /> : <ItemValue>{formatAmount(deiBonded)}</ItemValue>}
             </ModalInfoWrapper>
           </ModalWrapper>
         )
@@ -274,7 +263,6 @@ export default function StatsModal({ stat }: { stat: Dashboard }) {
             </ModalInfoWrapper>
             <ModalInfoWrapper>
               <p>Total DEI Bonded</p>
-              {deiBonded == 0 ? <Loader /> : <ItemValue>{formatAmount(deiBonded)}</ItemValue>}
             </ModalInfoWrapper>
             <ModalInfoWrapper active>
               <p>Circulating Supply</p>
@@ -421,7 +409,6 @@ export default function StatsModal({ stat }: { stat: Dashboard }) {
             </div>
             <ModalInfoWrapper>
               <p>Total bDEI Staked</p>
-              {totalDeposited == 0 ? <Loader /> : <ItemValue>{formatAmount(totalDeposited)}</ItemValue>}
             </ModalInfoWrapper>
           </ModalWrapper>
         )

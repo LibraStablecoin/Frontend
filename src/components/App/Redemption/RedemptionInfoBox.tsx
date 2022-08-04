@@ -59,7 +59,7 @@ export default function RedemptionInfoBox() {
 
       
       <RedeemInfoWrapper>
-        <p>Total DEI Supply</p>
+        <p>Total Libra Supply</p>
         {showLoader ? <Loader /> : <ItemValue>{formatAmount(val)}</ItemValue>}
       </RedeemInfoWrapper>
       {/* <RedeemInfoWrapper>

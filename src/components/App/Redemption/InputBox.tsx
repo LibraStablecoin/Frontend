@@ -115,7 +115,7 @@ export default function InputBox({
             disabled={disabled}
             style={{ textAlign: 'left', height: '50px', fontSize: '1.3rem' }}
           />
-          <Row style={{ width: currency?.symbol != 'DEI' ? '110px' : 'unset' }}>
+          <Row style={{ width: currency?.symbol != 'LIBRA' ? '110px' : 'unset' }}>
             <ImageWithFallback
               src={"images/" + currency?.symbol + ".png"}
               width={getImageSize()}

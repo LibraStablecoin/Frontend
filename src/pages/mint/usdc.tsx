@@ -11,7 +11,7 @@ import { useSupportedChainId } from 'hooks/useSupportedChainId'
 import useApproveCallback, { ApprovalState } from 'hooks/useApproveCallback'
 import useMinterCallback from 'hooks/useMinterCallback'
 import { tryParseAmount } from 'utils/parse'
-import { DEI_TOKEN, DEUS_TOKEN, USDC_TOKEN } from 'constants/tokens'
+import { LIBRA_TOKEN, DEUS_TOKEN, USDC_TOKEN } from 'constants/tokens'
 import { Pool } from 'constants/addresses'
 
 import { PrimaryButton } from 'components/Button'
@@ -72,7 +72,7 @@ export default function Mint() {
   const isSupportedChainId = useSupportedChainId()
   const [amountIn, setAmountIn] = useState('')
   const debouncedAmountIn = useDebounce(amountIn, 500)
-  const deiCurrency = DEI_TOKEN
+  const deiCurrency = LIBRA_TOKEN
   const usdcCurrency = USDC_TOKEN
   const deusCurrency = DEUS_TOKEN
   const deiCurrencyBalance = useCurrencyBalance(account ?? undefined, usdcCurrency)

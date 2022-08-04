@@ -46,7 +46,7 @@ export default function Info({ pool }: { pool: BorrowPool }) {
       <PositionRow
         label="Borrow Fee "
         value={`${borrowFee.toSignificant()}%`}
-        explanation={`This fee is added to your debt every time you borrow DEI.`}
+        explanation={`This fee is added to your debt every time you borrow Libra.`}
       />
       <PositionRow
         label="Interest Rate "

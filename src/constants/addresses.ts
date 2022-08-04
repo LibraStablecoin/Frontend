@@ -18,9 +18,9 @@ export const USDC_ADDRESS = {
   [SupportedChainId.BSC]: '0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d',
 }
 /* =====================================
-                DEI ADDRESS
+                LIBRA ADDRESS
 ===================================== */
-export const DEI_ADDRESS: AddressMap = {
+export const LIBRA_ADDRESS: AddressMap = {
   ...constructSameAddressMap('0x0fA9604dC5cCC62462CC330d2605D036d5C28275', [
     SupportedChainId.MAINNET,
     SupportedChainId.POLYGON,
@@ -39,26 +39,6 @@ export const DEUS_ADDRESS: AddressMap = {
   ]),
 }
 
-/* =====================================
-                bDEI ADDRESS
-===================================== */
-export const BDEI_ADDRESS: AddressMap = {
-  [SupportedChainId.FANTOM]: '0x05f6ea7F80BDC07f6E0728BbBBAbebEA4E142eE8',
-}
-
-/* =====================================
-                veDEUS ADDRESS (ERC721)
-===================================== */
-export const veDEUS: AddressMap = {
-  [SupportedChainId.FANTOM]: '0x8b42c6cb07c8dd5fe5db3ac03693867afd11353d',
-}
-
-/* =====================================
-                vDEUS ADDRESS (ERC721)
-===================================== */
-export const vDeus: AddressMap = {
-  [SupportedChainId.FANTOM]: '0x980c39133a1a4e83e41d652619adf8aa18b95c8b',
-}
 
 /* =====================================
                 PROTOCOL HOLDINGS ADDRESS

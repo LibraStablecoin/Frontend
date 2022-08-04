@@ -11,7 +11,6 @@ import { useBorrowPools } from 'state/borrow/hooks'
 import { getRemainingTime } from 'utils/time'
 import useDebounce from 'hooks/useDebounce'
 import { useDeiPrice } from 'hooks/useCoingeckoPrice'
-import { useTokenPerBlock } from 'hooks/useBdeiStakingPage'
 import { useDeiStats } from 'hooks/useDeiStats'
 import { StakingPools } from 'constants/stakings'
 import { useGetApy } from 'hooks/useStakingInfo'
@@ -193,117 +192,7 @@ export default function DeiStats() {
   }, [totalReserves, totalSupply])
 
   const showLoader = false
-/*
 
-
-<Container>
-              <Heading>DEI Bonds stats</Heading>
-              <div onClick={() => handleClick(Dashboard.TOTAL_DEI_BONDED)}>
-                <InfoWrapper>
-                  <p>Total DEI Bonded</p>
-                  {deiBonded == 0 ? <Loader /> : <ItemValue>{formatAmount(deiBonded)}</ItemValue>}
-                </InfoWrapper>
-              </div>
-              <div onClick={() => handleClick(Dashboard.TOTAL_BDEI_STAKED)}>
-                <InfoWrapper>
-                  <p>Total bDEI Staked</p>
-                  {totalDeposited == 0 ? <Loader /> : <ItemValue>{formatAmount(totalDeposited)}</ItemValue>}
-                </InfoWrapper>
-              </div>
-              <div onClick={() => handleClick(Dashboard.BDEI_STAKING_APR)}>
-                <InfoWrapper>
-                  <p>bDEI Staking APR</p>
-                  {bDeiSingleStakingAPR == 0 ? <Loader /> : <ItemValue>{bDeiSingleStakingAPR.toFixed(2)}%</ItemValue>}
-                </InfoWrapper>
-              </div>
-              <Container>
-                <SubWrapper>
-                  <div onClick={() => handleClick(Dashboard.BDEI_LIQUIDITY)}>
-                    <InfoWrapper secondary={true}>
-                      <p>bDEI Liqudity</p>
-                      {sPoolbDEILiquidity === null ? (
-                        <Loader />
-                      ) : (
-                        <ItemValue>{formatAmount(sPoolbDEILiquidity, 2)}</ItemValue>
-                      )}
-                    </InfoWrapper>
-                  </div>
-                  <div onClick={() => handleClick(Dashboard.DEI_LIQUIDITY)}>
-                    <InfoWrapper secondary={true}>
-                      <p>DEI Liquidity</p>
-                      {sPoolDEILiquidity == 0 ? (
-                        <Loader />
-                      ) : (
-                        <ItemValue>{formatAmount(sPoolDEILiquidity, 2)}</ItemValue>
-                      )}
-                    </InfoWrapper>
-                  </div>
-                </SubWrapper>
-                <div onClick={() => handleClick(Dashboard.BDEI_DEI_LIQUIDITY)}>
-                  <InfoWrapper>
-                    <p>Total bDEI-DEI Liquidity</p>
-                    {sPoolLiquidity === null ? <Loader /> : <ItemValue>{formatAmount(sPoolLiquidity, 2)}</ItemValue>}
-                  </InfoWrapper>
-                </div>
-                <div onClick={() => handleClick(Dashboard.BDEI_DEI_STAKING_APR)}>
-                  <InfoWrapper>
-                    <p>DEI-bDEI Staking APR</p>
-                    {bDeiDeiStakingAPR == 0 ? <Loader /> : <ItemValue>{bDeiDeiStakingAPR.toFixed(2)}%</ItemValue>}
-                  </InfoWrapper>
-                </div>
-              </Container>
-              <div onClick={() => handleClick(Dashboard.DEI_BOND_MATURITY)}>
-                <InfoWrapper>
-                  <p>Current Bond maturity</p>
-                  {redeemTime == 0 ? <Loader /> : <ItemValue>~ {roundedDays} days</ItemValue>}
-                </InfoWrapper>
-              </div>
-            </Container>
-
- <div onClick={() => handleClick(Dashboard.TOTAL_DEI_BONDED)}>
-                  <InfoWrapper secondary={true}>
-                    <p>Total DEI Bonded</p>
-                    {deiBonded == 0 ? <Loader /> : <ItemValue>{formatAmount(deiBonded)}</ItemValue>}
-                  </InfoWrapper>
-                </div>
-
-   <div onClick={() => handleClick(Dashboard.GLOBAL_DEI_BORROWED)}>
-              <InfoWrapper>
-                <p>Global DEI Borrowed</p>
-                {borrowedElastic === null ? (
-                  <Loader />
-                ) : (
-                  <ItemValue>{formatAmount(parseFloat(borrowedElastic))}</ItemValue>
-                )}
-              </InfoWrapper>
-            </div>
-
- <SubWrapper>
-                <div onClick={() => handleClick(Dashboard.DEI_PROTOCOL_HOLDINGS)}>
-                  <InfoWrapper secondary={true}>
-                    <p>Protocol Holdings</p>
-                    {totalProtocolHoldings === null ? (
-                      <Loader />
-                    ) : (
-                      <ItemValue>{formatAmount(totalProtocolHoldings, 2)}</ItemValue>
-                    )}
-                  </InfoWrapper>
-                </div>
-               
-              </SubWrapper>
-              <div onClick={() => handleClick(Dashboard.DEI_CIRCULATING_SUPPLY)}>
-                <InfoWrapper>
-                  <p>Circulating Supply</p>
-                  {circulatingSupply === null ? (
-                    <Loader />
-                  ) : (
-                    <ItemValue>{formatAmount(circulatingSupply, 2)}</ItemValue>
-                  )}
-                </InfoWrapper>
-              </div>
-            </Container>
-
-*/
   function handleClick(flag: Dashboard) {
     setCurrentStat(flag)
     toggleDashboardModal()

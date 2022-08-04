@@ -41,7 +41,6 @@ import {
   Multicall2,
   SolidexLpDepositor,
   Reimburse,
-  veDEUS,
   BaseV1Factory,
   BaseV1Voter,
   ZERO_ADDRESS,
@@ -52,10 +51,9 @@ import {
   veDist,
   SwapFlashLoan,
   MasterChefV2,
-  vDeus,
   vDeusStaking,
   vDeusMasterChefV2,
-  DEI_ADDRESS,
+  LIBRA_ADDRESS,
   PoolDAI,
   LPaddr,
   Oracle,
@@ -163,17 +161,8 @@ export function useReimburseContract() {
   return useContract(address, REIMBURSE_ABI)
 }
 
-export function useVeDeusContract() {
-  const { chainId } = useWeb3React()
-  const address = useMemo(() => (chainId ? veDEUS[chainId] : undefined), [chainId])
-  return useContract(address, VEDEUS_ABI)
-}
 
-export function useVDeusContract() {
-  const { chainId } = useWeb3React()
-  const address = useMemo(() => (chainId ? vDeus[chainId] : undefined), [chainId])
-  return useContract(address, VDEUS_ABI)
-}
+
 
 export function useVeDistContract() {
   const { chainId } = useWeb3React()
@@ -230,7 +219,7 @@ export function useoracleaddr(){
 }
 export function useTokenContract() {
   const { chainId } = useWeb3React()
-  const address = useMemo(() => (chainId ? DEI_ADDRESS[chainId] : undefined), [chainId])
+  const address = useMemo(() => (chainId ? LIBRA_ADDRESS[chainId] : undefined), [chainId])
   return useContract(address, StableABI)
 }
 export function useDeiBonderContract() {

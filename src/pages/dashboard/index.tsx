@@ -22,16 +22,7 @@ const SelectorContainer = styled.div`
 `
 
 export default function Dashboard() {
-  const [selected, setSelected] = useState<NavigationTypes>(NavigationTypes.DEI)
-
-  const getAppComponent = (): JSX.Element => {
-    if (selected == NavigationTypes.DEI) {
-      return <DeiStats />
-    }
-   
-    return <DeiStats />
-  }
-
+ 
   return (
     <Container>
       <Hero>
@@ -39,7 +30,7 @@ export default function Dashboard() {
         <HeroSubtext>Important stats about LIBRA </HeroSubtext>
       </Hero>
 
-      {getAppComponent()}
+      <DeiStats />
 
       <Disclaimer />
     </Container>

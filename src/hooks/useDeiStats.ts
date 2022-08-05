@@ -1,6 +1,4 @@
 import { formatUnits } from '@ethersproject/units'
-import { ProtocolHoldings1, ProtocolHoldings2, SwapFlashLoan, USDCReserves1, USDCReserves2 } from 'constants/addresses'
-import { SupportedChainId } from 'constants/chains'
 import { DAI_TOKEN, LIBRA_TOKEN, USDC_TOKEN } from 'constants/tokens'
 import { useMemo } from 'react'
 import { useSingleContractMultipleMethods } from 'state/multicall/hooks'
@@ -23,7 +21,6 @@ export function useDeiStats(): {
   const minterdaiContract = useMinterDAIContract()?.address
   const usdcContract = useERC20Contract(USDC_TOKEN.address)
   const daiContract = useERC20Contract(DAI_TOKEN.address)
-  const sPoolAddress = SwapFlashLoan[SupportedChainId.FANTOM]
 
   const calls = !deiContract
     ? []

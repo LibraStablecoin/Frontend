@@ -179,12 +179,12 @@ export default function Mint() {
     if (awaitingRedeemConfirmation) {
       return (
         <RedeemButton>
-          Redeeming DEI <DotFlashing style={{ marginLeft: '10px' }} />
+          Minting LIBRA <DotFlashing style={{ marginLeft: '10px' }} />
         </RedeemButton>
       )
     }
 
-    return <RedeemButton onClick={() => handleRedeem()}>Mint DEI</RedeemButton>
+    return <RedeemButton onClick={() => handleRedeem()}>Mint LIBRA</RedeemButton>
   }
 
   return (

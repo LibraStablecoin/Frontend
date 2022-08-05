@@ -216,12 +216,12 @@ export default function Redemption() {
     if (awaitingRedeemConfirmation) {
       return (
         <RedeemButton>
-          Redeeming DEI <DotFlashing style={{ marginLeft: '10px' }} />
+          Redeeming LIBRA <DotFlashing style={{ marginLeft: '10px' }} />
         </RedeemButton>
       )
     }
 
-    return <RedeemButton onClick={() => handleRedeem()}>Redeem DEI</RedeemButton>
+    return <RedeemButton onClick={() => handleRedeem()}>Redeem LIBRA</RedeemButton>
   }
   function getCollectButton(): JSX.Element | null {
    
@@ -267,7 +267,7 @@ return null
         {
           <Row mt={'8px'}>
             <Info data-for="id" data-tip={'Tool tip for hint client'} size={15} />
-            <Description>you will get an NFT {`"DEUS voucher"`} that will let you claim DEUS later .</Description>
+            <Description>After redeeming your LIBRA you must collect the collateral by clicking on the dedicated button</Description>
           </Row>
         }
         <div style={{ marginTop: '20px' }}></div>

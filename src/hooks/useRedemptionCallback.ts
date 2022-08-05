@@ -138,7 +138,7 @@ export default function useRedemptionCallback(
           })
           .then((response: TransactionResponse) => {
             console.log(response)
-            const summary = `Redeem ${deiAmount?.toSignificant()} DEI for ${usdcAmount?.toSignificant()} USDC `
+            const summary = `Redeem ${deiAmount?.toSignificant()} LIBRA for ${usdcAmount?.toSignificant()} USDC `
             addTransaction(response, { summary })
 
             return response.hash

@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import Hero, { HeroSubtext } from 'components/Hero'
 import Disclaimer from 'components/Disclaimer'
-import { NavigationTypes } from 'components/App/Dashboard'
 import DeiStats from 'components/App/Dashboard/DeiStats'
 
 const Container = styled.div`

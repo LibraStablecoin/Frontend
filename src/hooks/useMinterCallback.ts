@@ -136,7 +136,7 @@ export default function useMinterCallback(
           })
           .then((response: TransactionResponse) => {
             console.log(response)
-            const summary = `Redeem ${deiAmount?.toSignificant()} DEI for ${usdcAmount?.toSignificant()} USDC & $ as DEUS NFT`
+            const summary = `Mint ${usdcAmount?.toSignificant()} USDC for ${deiAmount?.toSignificant()} LIBRA `
             addTransaction(response, { summary })
 
             return response.hash

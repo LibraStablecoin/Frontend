@@ -124,6 +124,8 @@ export default function StatsModal({ stat }: { stat: Dashboard }) {
     usdcReserves1,
     daiReserves, 
     totalReserves,
+    minted_amo,
+    reedemed_amo
   } = useDeiStats()
 
   const usdcBackingPerDei = useMemo(() => {
@@ -356,20 +358,22 @@ export default function StatsModal({ stat }: { stat: Dashboard }) {
       case Dashboard.TOTAL_DEI_REDEEMED:
         return (
           <ModalWrapper>
-            <div>DEI gets burned from total supply whenever a user redeems it for underlying USDC and vDEUS.</div>
-            <div>
-              Contract Address :{' '}
-              <a
-                href="https://ftmscan.com/address/0xfd74e924dc96c72ba52439e28ce780908a630d13"
-                target={'_blank'}
-                rel={'noreferrer'}
-              >
-                DEI Redeemer Contract
-              </a>
-            </div>
+            <div>LIBRA gets burned from total supply whenever a user redeems it for underlying USDC or DAI.</div>
+            
             <ModalInfoWrapper>
               <p>Total LIBRA Redeemed</p>
-              {showLoader ? <Loader /> : <ItemValue>{formatAmount(0)}</ItemValue>}
+              {showLoader ? <Loader /> : <ItemValue>{formatAmount(reedemed_amo)}</ItemValue>}
+            </ModalInfoWrapper>
+          </ModalWrapper>
+        )
+        case Dashboard.TOTAL_DEI_MINTED:
+        return (
+          <ModalWrapper>
+            <div>Each LIBRA is minted by depositing 1$ of collateral into the minting contract</div>
+            
+            <ModalInfoWrapper>
+              <p>Total LIBRA Minted</p>
+              {showLoader ? <Loader /> : <ItemValue>{formatAmount(minted_amo)}</ItemValue>}
             </ModalInfoWrapper>
           </ModalWrapper>
         )

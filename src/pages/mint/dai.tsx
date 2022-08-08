@@ -206,7 +206,7 @@ export default function Mint() {
         {
           <Row mt={'8px'}>
             <Info data-for="id" data-tip={'Tool tip for hint client'} size={15} />
-            <Description>you will get an NFT {`"DEUS voucher"`} that will let you claim DEUS later .</Description>
+            <Description>Each LIBRA is minted by depositing 1$ of collateral into the minting contract .</Description>
           </Row>
         }
         <div style={{ marginTop: '20px' }}></div>

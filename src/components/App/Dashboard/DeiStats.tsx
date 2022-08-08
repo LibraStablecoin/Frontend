@@ -6,13 +6,10 @@ import { useRedeemData } from 'hooks/useRedemptionPage'
 import { RowBetween } from 'components/Row'
 import { Loader } from 'components/Icons'
 import { formatAmount, formatDollarAmount } from 'utils/numbers'
-import { useBorrowPools } from 'state/borrow/hooks'
-import { getRemainingTime } from 'utils/time'
-import useDebounce from 'hooks/useDebounce'
+
 import { useDeiPrice } from 'hooks/useCoingeckoPrice'
 import { useDeiStats } from 'hooks/useDeiStats'
-import { StakingPools } from 'constants/stakings'
-import { useGetApy } from 'hooks/useStakingInfo'
+
 import { useDashboardModalToggle } from 'state/application/hooks'
 import StatsModal from './StatsModal'
 
@@ -172,10 +169,7 @@ export default function DeiStats() {
   const {price} = useDeiPrice()
 
 
-  const pools = useBorrowPools()
-
-  const debouncedAmountIn = useDebounce('', 500)
-
+  
 
   const {
     totalSupply,

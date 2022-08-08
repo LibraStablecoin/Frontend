@@ -72,10 +72,10 @@ export default function Mint() {
   const isSupportedChainId = useSupportedChainId()
   const [amountIn, setAmountIn] = useState('')
   const debouncedAmountIn = useDebounce(amountIn, 500)
-  const deiCurrency = LIBRA_TOKEN
+  const libraCurrency = LIBRA_TOKEN
   const usdcCurrency = USDC_TOKEN
   const deusCurrency = DEUS_TOKEN
-  const deiCurrencyBalance = useCurrencyBalance(account ?? undefined, usdcCurrency)
+  const libraCurrencyBalance = useCurrencyBalance(account ?? undefined, usdcCurrency)
 
   /* const { amountIn, amountOut1, amountOut2, onUserInput, onUserOutput1, onUserOutput2 } = useRedeemAmounts() */
   const amountOut1 = amountIn
@@ -83,14 +83,14 @@ export default function Mint() {
   // console.log({ redeemPaused, rest })
 
   // Amount typed in either fields
-  const deiAmount = useMemo(() => {
+  const libraAmount = useMemo(() => {
     return tryParseAmount(amountIn, usdcCurrency || undefined)
-  }, [amountIn, deiCurrency])
+  }, [amountIn, libraCurrency])
 
   const insufficientBalance = useMemo(() => {
-    if (!deiAmount) return false
-    return deiCurrencyBalance?.lessThan(deiAmount)
-  }, [deiCurrencyBalance, deiAmount])
+    if (!libraAmount) return false
+    return libraCurrencyBalance?.lessThan(libraAmount)
+  }, [libraCurrencyBalance, libraAmount])
 
   const usdcAmount = useMemo(() => {
     return tryParseAmount(amountOut1, usdcCurrency || undefined)
@@ -100,16 +100,16 @@ export default function Mint() {
     state: redeemCallbackState,
     callback: redeemCallback,
     error: redeemCallbackError,
-  } = useMinterCallback(deiCurrency, usdcCurrency, deiAmount, usdcAmount)
+  } = useMinterCallback(libraCurrency, usdcCurrency, libraAmount, usdcAmount)
 
   const [awaitingApproveConfirmation, setAwaitingApproveConfirmation] = useState<boolean>(false)
   const [awaitingRedeemConfirmation, setAwaitingRedeemConfirmation] = useState<boolean>(false)
   const spender = useMemo(() => (chainId ? Pool[chainId] : undefined), [chainId])
   const [approvalState, approveCallback] = useApproveCallback(usdcCurrency ?? undefined, spender)
   const [showApprove, showApproveLoader] = useMemo(() => {
-    const show = deiCurrency && approvalState !== ApprovalState.APPROVED && !!amountIn
+    const show = libraCurrency && approvalState !== ApprovalState.APPROVED && !!amountIn
     return [show, show && approvalState === ApprovalState.PENDING]
-  }, [deiCurrency, approvalState, amountIn])
+  }, [libraCurrency, approvalState, amountIn])
 
   
 
@@ -200,7 +200,7 @@ export default function Mint() {
         <ArrowDown />
 
         <InputBox
-          currency={deiCurrency}
+          currency={libraCurrency}
           value={amountOut1}
           onChange={(value: string) => console.log(value)}
           title={'To'}

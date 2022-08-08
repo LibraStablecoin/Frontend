@@ -73,9 +73,9 @@ export default function Redemption() {
   const toggleWalletModal = useWalletModalToggle()
   const isSupportedChainId = useSupportedChainId()
   const [amountIn, setAmountIn] = useState('')
-  const deiCurrency = LIBRA_TOKEN
+  const libraCurrency = LIBRA_TOKEN
   const daiCurrency = DAI_TOKEN
-  const deiCurrencyBalance = useCurrencyBalance(account ?? undefined, deiCurrency)
+  const libraCurrencyBalance = useCurrencyBalance(account ?? undefined, libraCurrency)
 
   /* const { amountIn, amountOut1, amountOut2, onUserInput, onUserOutput1, onUserOutput2 } = useRedeemAmounts() */
   const  amountOut1 = amountIn
@@ -87,14 +87,14 @@ export default function Redemption() {
   
   console.log(reedemv,account)
   // Amount typed in either fields
-  const deiAmount = useMemo(() => {
-    return tryParseAmount(amountIn, deiCurrency || undefined)
-  }, [amountIn, deiCurrency])
+  const libraAmount = useMemo(() => {
+    return tryParseAmount(amountIn, libraCurrency || undefined)
+  }, [amountIn, libraCurrency])
 
   const insufficientBalance = useMemo(() => {
-    if (!deiAmount) return false
-    return deiCurrencyBalance?.lessThan(deiAmount)
-  }, [deiCurrencyBalance, deiAmount])
+    if (!libraAmount) return false
+    return libraCurrencyBalance?.lessThan(libraAmount)
+  }, [libraCurrencyBalance, libraAmount])
 
   const usdcAmount = useMemo(() => {
     return tryParseAmount(amountOut1, daiCurrency || undefined)
@@ -104,7 +104,7 @@ export default function Redemption() {
     state: redeemCallbackState,
     callback: redeemCallback,
     error: redeemCallbackError,
-  } = useRedemptionDAICallback(deiCurrency, daiCurrency, deiAmount, usdcAmount)
+  } = useRedemptionDAICallback(libraCurrency, daiCurrency, libraAmount, usdcAmount)
 
   const {
     state: collectCallbackState,
@@ -116,11 +116,11 @@ export default function Redemption() {
   const [awaitingRedeemConfirmation, setAwaitingRedeemConfirmation] = useState<boolean>(false)
   const [awaitingCollectConfirmation, setAwaitingCollectConfirmation] = useState<boolean>(false)
   const spender = useMemo(() => (chainId ? PoolDAI[chainId] : undefined), [chainId])
-  const [approvalState, approveCallback] = useApproveCallback(deiCurrency ?? undefined, spender)
+  const [approvalState, approveCallback] = useApproveCallback(libraCurrency ?? undefined, spender)
   const [showApprove, showApproveLoader] = useMemo(() => {
-    const show = deiCurrency && approvalState !== ApprovalState.APPROVED && !!amountIn
+    const show = libraCurrency && approvalState !== ApprovalState.APPROVED && !!amountIn
     return [show, show && approvalState === ApprovalState.PENDING]
-  }, [deiCurrency, approvalState, amountIn])
+  }, [libraCurrency, approvalState, amountIn])
 
 
   const handleApprove = async () => {
@@ -192,7 +192,7 @@ export default function Redemption() {
       )
     }
     if (showApprove) {
-      return <RedeemButton onClick={handleApprove}>Allow us to spend {deiCurrency?.symbol}</RedeemButton>
+      return <RedeemButton onClick={handleApprove}>Allow us to spend {libraCurrency?.symbol}</RedeemButton>
     }
     return null
   }
@@ -211,7 +211,7 @@ export default function Redemption() {
    
 
     if (insufficientBalance) {
-      return <RedeemButton disabled>Insufficient {deiCurrency?.symbol} Balance</RedeemButton>
+      return <RedeemButton disabled>Insufficient {libraCurrency?.symbol} Balance</RedeemButton>
     }
     if (awaitingRedeemConfirmation) {
       return (
@@ -248,7 +248,7 @@ return null
     
       <Wrapper>
         <InputBox
-          currency={deiCurrency}
+          currency={libraCurrency}
           value={amountIn}
           onChange={(value: string) => setAmountIn(value)}
           title={'From'}

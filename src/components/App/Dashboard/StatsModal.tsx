@@ -158,7 +158,7 @@ export default function StatsModal({ stat }: { stat: Dashboard }) {
         return (
           <ModalWrapper>
             <div>
-              Price as sourced by:
+              Price calculated on SpookySwap:
              
             </div>
             <ModalInfoWrapper>
@@ -193,8 +193,8 @@ export default function StatsModal({ stat }: { stat: Dashboard }) {
       case Dashboard.DEI_PROTOCOL_HOLDINGS:
         return (
           <ModalWrapper>
-            <div>DEI Protocol holdings are held in two wallets.</div>
-            <div>Below is the DEI holdings in each wallet.</div>
+            <div>Libra Protocol reserves are held in two different contracts.</div>
+            <div>Below is the LIBRA reserves in each Contract.</div>
             <ModalInfoWrapper>
               <a
                 href="https://ftmscan.com/token/0xde12c7959e1a72bbe8a5f7a1dc8f8eef9ab011b3?a=0x0b99207afbb08ec101b5691e7d5c6faadd09a89b"
@@ -228,7 +228,7 @@ export default function StatsModal({ stat }: { stat: Dashboard }) {
       case Dashboard.TOTAL_DEI_BONDED:
         return (
           <ModalWrapper>
-            <div>Total DEI Bonded in the Bonding Contract.</div>
+            <div>Total LIBRA Bonded in the Bonding Contract.</div>
             <div>
               Contract Address :{' '}
               <a
@@ -240,7 +240,7 @@ export default function StatsModal({ stat }: { stat: Dashboard }) {
               </a>
             </div>
             <ModalInfoWrapper>
-              <p>Total DEI Bonded</p>
+              <p>Total LIBRA Bonded</p>
             </ModalInfoWrapper>
           </ModalWrapper>
         )
@@ -248,7 +248,7 @@ export default function StatsModal({ stat }: { stat: Dashboard }) {
         return (
           <ModalWrapper>
             <div>DEI Circulating Supply is calculated as below: </div>
-            <ItemValue>Circulating Supply = Total Supply - Protocol Holdings - Total DEI Bonded</ItemValue>
+            <ItemValue>Circulating Supply = Total Supply - Protocol Holdings - Total LIBRA Bonded</ItemValue>
             <ModalInfoWrapper>
               <p>Total Supply</p>
               {totalSupply === null ? <Loader /> : <ItemValue>{formatAmount(totalSupply, 2)}</ItemValue>}
@@ -262,7 +262,7 @@ export default function StatsModal({ stat }: { stat: Dashboard }) {
               )}
             </ModalInfoWrapper>
             <ModalInfoWrapper>
-              <p>Total DEI Bonded</p>
+              <p>Total LIBRA Bonded</p>
             </ModalInfoWrapper>
             <ModalInfoWrapper active>
               <p>Circulating Supply</p>
@@ -273,8 +273,8 @@ export default function StatsModal({ stat }: { stat: Dashboard }) {
       case Dashboard.TOTAL_USDC_RESERVES:
         return (
           <ModalWrapper>
-            <div>DEI Protocol USDC Reserves are held in two wallets.</div>
-            <div>Below is the USDC holdings in each wallet.</div>
+            <div>Libra Protocol reserves are held in two different contracts.</div>
+            <div>Below is the LIBRA reserves in each Contract.</div>
             <ModalInfoWrapper>
               <a
                 href="https://ftmscan.com/token/0x04068da6c83afcfa0e13ba15a6696662335d5b75?a=0x76DC5f7F64089be86cCB3879b2cb5151CBE09E6d"
@@ -336,7 +336,7 @@ export default function StatsModal({ stat }: { stat: Dashboard }) {
       case Dashboard.GLOBAL_DEI_BORROWED:
         return (
           <ModalWrapper>
-            <div>Total DEI Borrowed from the DEI Money markets</div>
+            <div>Total LIBRA Borrowed from the DEI Money markets</div>
             <div>
               Link to Borrow :{' '}
               <Link href="/borrow" passHref>
@@ -368,7 +368,7 @@ export default function StatsModal({ stat }: { stat: Dashboard }) {
               </a>
             </div>
             <ModalInfoWrapper>
-              <p>Total DEI Redeemed</p>
+              <p>Total LIBRA Redeemed</p>
               {showLoader ? <Loader /> : <ItemValue>{formatAmount(0)}</ItemValue>}
             </ModalInfoWrapper>
           </ModalWrapper>

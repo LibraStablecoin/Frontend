@@ -312,11 +312,7 @@ export function useSolidlyPoolAPR(pair: SolidlyPair): string {
   const poolLiquidityValue = usePoolLiquidityValue(pair.token0.symbol, pair.token1.symbol, poolReserve0, poolReserve1)
 
   return useMemo(() => {
-    // total votes for USDC/DEI AT SNAPSHOT = x
-    // total veNFT votes AT SNAPSHOT = y
-    // total SOLID emission = e
-    // price SOLID = z
-    // total liquidity USDC/DEI = L
+   
     // APR% = ((x/y)*e*z) / L * 52
     const poolEmissionWeight = new BigNumber(poolVotingPowerAtSnapshot).div(totalVotingPowerAtSnapshot)
     const weeklySolidToPoolInUSD = poolEmissionWeight.times(weeklyEmission).times(solidPrice)

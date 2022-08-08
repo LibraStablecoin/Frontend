@@ -149,13 +149,13 @@ export enum Dashboard {
   DEI_PRICE = 'LIBRA Price',
   DEI_TOTAL_SUPPLY = 'LIBRA Total Supply',
   DEI_PROTOCOL_HOLDINGS = 'LIBRA Protocol Holdings',
-  TOTAL_DEI_BONDED = 'Total DEI Bonded',
+  TOTAL_DEI_BONDED = 'Total LIBRA Bonded',
   DEI_CIRCULATING_SUPPLY = 'DEI Circulating Supply',
-  TOTAL_USDC_RESERVES = 'Total USDC Reserves',
+  TOTAL_USDC_RESERVES = 'Total Reserves',
   USDC_BACKING_FOR_DEI = 'Value Backing per LIBRA',
   GLOBAL_DEI_BORROWED = 'Global DEI Borrowed',
-  TOTAL_DEI_REDEEMED = 'Total DEI Redeemed',
-  TOTAL_DEI_MINTED = 'Total DEI Minted',
+  TOTAL_DEI_REDEEMED = 'Total LIBRA Redeemed',
+  TOTAL_DEI_MINTED = 'Total LIBRA Minted',
   REDEMPTION_PER_DEI = 'Redemption per DEI',
   TOTAL_BDEI_STAKED = 'Total bDEI Staked',
   BDEI_STAKING_APR = 'bDEI Staking APR',
@@ -219,7 +219,7 @@ export default function DeiStats() {
              
             <div onClick={() => handleClick(Dashboard.TOTAL_USDC_RESERVES)}>
               <InfoWrapper>
-                <p>Total USDC Reserves</p>
+                <p>Total Reserves</p>
                 {totalReserves === null ? <Loader /> : <ItemValue>{formatAmount(usdcReserves1, 2)}</ItemValue>}
               </InfoWrapper>
             </div>
@@ -239,7 +239,7 @@ export default function DeiStats() {
               <Heading>Redemption stats</Heading>
               <div onClick={() => handleClick(Dashboard.TOTAL_DEI_REDEEMED)}>
                 <InfoWrapper>
-                  <p>Total DEI Redeemed</p>
+                  <p>Total LIBRA Redeemed</p>
                   {showLoader ? <Loader /> : <ItemValue>{formatAmount(reedemed_amo)}</ItemValue>}
                 </InfoWrapper>
               </div>
@@ -249,7 +249,7 @@ export default function DeiStats() {
               <Heading>Mint stats</Heading>
               <div onClick={() => handleClick(Dashboard.TOTAL_DEI_MINTED)}>
                 <InfoWrapper>
-                  <p>Total DEI Minted</p>
+                  <p>Total LIBRA Minted</p>
                   {showLoader ? <Loader /> : <ItemValue>{formatAmount(minted_amo)}</ItemValue>}
                 </InfoWrapper>
               </div>

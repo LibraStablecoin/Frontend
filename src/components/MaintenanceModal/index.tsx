@@ -62,8 +62,8 @@ export default function MaintenanceModal({ content }: { content: string }) {
     if (!isSupportedChainId) {
       return (
         <>
-          <div>You are not connected to the Fantom Opera Network.</div>
-          <PrimaryButton onClick={() => rpcChangerCallback(SupportedChainId.FANTOM)}>Switch to Fantom</PrimaryButton>
+          <div>You are not connected to the Polygon Network.</div>
+          <PrimaryButton onClick={() => rpcChangerCallback(SupportedChainId.POLYGON)}>Switch to Polygon</PrimaryButton>
         </>
       )
     }

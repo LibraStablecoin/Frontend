@@ -66,6 +66,7 @@ function useCallsData(
   // update listeners when there is an actual change that persists for at least 100ms
   useEffect(() => {
     const callKeys: string[] = JSON.parse(serializedCallKeys)
+
     if (!chainId || callKeys.length === 0) return undefined
     const calls = callKeys.map((key) => parseCallKey(key))
     dispatch(
@@ -133,10 +134,12 @@ function toCallState(
   const success = data && data.length > 2
   const syncing = (blockNumber ?? 0) < latestBlockNumber
   let result: Result | undefined = undefined
+
   if (success && data) {
     try {
       result = contractInterface.decodeFunctionResult(fragment, data)
     } catch (error) {
+      console.log(error)
       console.debug('Result data parsing failed', fragment, data)
       return {
         valid: true,
@@ -147,6 +150,7 @@ function toCallState(
       }
     }
   }
+  
   return {
     valid: true,
     loading: false,
@@ -267,13 +271,12 @@ export function useMultipleContractSingleData(
         : [],
     [addresses, callData, fragment, gasRequired]
   )
-
   const results = useCallsData(calls, options)
 
   const latestBlockNumber = useBlockNumber()
-
   return useMemo(() => {
     return results.map((result) => toCallState(result, contractInterface, fragment, latestBlockNumber))
+   
   }, [fragment, results, contractInterface, latestBlockNumber])
 }
 

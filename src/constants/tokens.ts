@@ -2,11 +2,11 @@ import { SupportedChainId } from 'constants/chains'
 import { DAI_ADDRESS, Token } from '@sushiswap/core-sdk'
 import { USDC_ADDRESS, DEUS_ADDRESS, LIBRA_ADDRESS } from './addresses'
 
-export const LIBRA_TOKEN = new Token(SupportedChainId.FANTOM, LIBRA_ADDRESS[SupportedChainId.FANTOM], 18, 'LIBRA', 'LIBRA')
+export const LIBRA_TOKEN = new Token(SupportedChainId.POLYGON, LIBRA_ADDRESS[SupportedChainId.POLYGON], 18, 'LIBRA', 'LIBRA')
 
-export const USDC_TOKEN = new Token(SupportedChainId.FANTOM, USDC_ADDRESS[SupportedChainId.FANTOM], 6, 'USDC', 'USDC')
+export const USDC_TOKEN = new Token(SupportedChainId.POLYGON, USDC_ADDRESS[SupportedChainId.POLYGON], 6, 'USDC', 'USDC')
 
-export const DAI_TOKEN = new Token(SupportedChainId.FANTOM, DAI_ADDRESS[SupportedChainId.FANTOM], 18, 'DAI', 'DAI')
+export const DAI_TOKEN = new Token(SupportedChainId.POLYGON, DAI_ADDRESS[SupportedChainId.POLYGON], 18, 'DAI', 'DAI')
 
 export const DEUS_TOKEN = new Token(SupportedChainId.FANTOM, DEUS_ADDRESS[SupportedChainId.FANTOM], 18, 'DEUS', 'DEUS')
 

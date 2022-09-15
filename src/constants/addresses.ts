@@ -21,7 +21,7 @@ export const USDC_ADDRESS = {
                 LIBRA ADDRESS
 ===================================== */
 export const LIBRA_ADDRESS: AddressMap = {
-  ...constructSameAddressMap('0x0fA9604dC5cCC62462CC330d2605D036d5C28275', [
+  ...constructSameAddressMap('0x3C116E028c82c519D5A2132E573f1b89520D8E3D', [
     SupportedChainId.MAINNET,
     SupportedChainId.POLYGON,
     SupportedChainId.FANTOM,
@@ -67,7 +67,8 @@ export const USDCReserves2: AddressMap = {
 ===================================== */
 
 export const Multicall2: AddressMap = {
-  [SupportedChainId.FANTOM]: '0x22D4cF72C45F8198CfbF4B568dBdB5A85e8DC0B5',
+  [SupportedChainId.FANTOM]: '0xfd8792C6B9b6fc29842F482Ce3F824BB6815326F',
+  [SupportedChainId.POLYGON]: '0xfd8792C6B9b6fc29842F482Ce3F824BB6815326F',
 }
 
 export const BaseV1Factory: AddressMap = {
@@ -106,19 +107,36 @@ export const DynamicRedeemer: AddressMap = {
   [SupportedChainId.FANTOM]: '0xFD74E924dc96c72Ba52439e28CE780908A630D13',
 }
 export const Pool: AddressMap = {
-  [SupportedChainId.FANTOM]: '0x76DC5f7F64089be86cCB3879b2cb5151CBE09E6d',
+  ...constructSameAddressMap('0x5b93c2Ff841d82e522fe704B983872E66a33f012', [
+    SupportedChainId.MAINNET,
+    SupportedChainId.POLYGON,
+    SupportedChainId.FANTOM,
+  ]),
+  
 }
 export const PoolDAI: AddressMap = {
-  [SupportedChainId.FANTOM]: '0x6f4b08886040396C7BFE01563FE90fD5442579A7',
+  ...constructSameAddressMap('0x066740a78dCBF53331B748fFeB3A32a167a16a12', [
+    SupportedChainId.MAINNET,
+    SupportedChainId.POLYGON,
+    SupportedChainId.FANTOM,
+  ]),
 }
 export const LPaddr: AddressMap = {
-  [SupportedChainId.FANTOM]: '0x6F9B16aD07f827Aa0762B925a68691BeC28f0A03',
+  ...constructSameAddressMap('0x7d37539c77aBC7f5A0f30e50D1a9310202B82d55', [
+    SupportedChainId.MAINNET,
+    SupportedChainId.POLYGON,
+    SupportedChainId.FANTOM,
+  ]),
 }
 export const veDist: AddressMap = {
   [SupportedChainId.FANTOM]: '0x09cE8C8E2704E84750E9c1a4F54A30eF60aF0073',
 }
 export const Oracle: AddressMap = {
-  [SupportedChainId.FANTOM]: '0x57e1Fc813AeaAb5222662CB89781F2c07B0Df666',
+  ...constructSameAddressMap('0x0aF503B0Fd832a42B12e93146B362dB6C73d1941', [
+    SupportedChainId.MAINNET,
+    SupportedChainId.POLYGON,
+    SupportedChainId.FANTOM,
+  ]),
 }
 export const DeiBonder: AddressMap = {
   [SupportedChainId.FANTOM]: '0x958C24d5cDF94fAF47cF4d66400Af598Dedc6e62',

@@ -91,7 +91,6 @@ export  function useDeiPrice() : {
   )
 
 
-console.log(reserve0v,reserve1v,price)
 
   return {
     price: ((price*reserve1v )/ reserve0v)/(10 ** 18),

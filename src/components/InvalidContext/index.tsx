@@ -41,8 +41,8 @@ export function InvalidContext({ connectText }: { connectText?: string }) {
     if (invalidContext === ContextError.CHAIN_ID) {
       return (
         <>
-          <div>You are not connected to the Fantom Opera Network.</div>
-          <PrimaryButton onClick={() => rpcChangerCallback(SupportedChainId.FANTOM)}>Switch to Fantom</PrimaryButton>
+          <div>You are not connected to the Polygon Network.</div>
+          <PrimaryButton onClick={() => rpcChangerCallback(SupportedChainId.POLYGON)}>Switch to Polygon</PrimaryButton>
         </>
       )
     }

@@ -47,10 +47,10 @@ export const SUPPORTED_CHAIN_IDS: SupportedChainId[] = Object.values(SupportedCh
   (id) => typeof id === 'number'
 ) as SupportedChainId[]
 
-export const SolidlyChains = [SupportedChainId.FANTOM]
+export const SolidlyChains = [SupportedChainId.POLYGON]
 
-export const FALLBACK_CHAIN_ID = SupportedChainId.FANTOM
+export const FALLBACK_CHAIN_ID = SupportedChainId.POLYGON
 
 export const NETWORK_URLS: { [chainId: number]: string } = {
-  [SupportedChainId.FANTOM]: 'https://rpc.ftm.tools',
+  [SupportedChainId.POLYGON]: 'https://polygon-rpc.com',
 }

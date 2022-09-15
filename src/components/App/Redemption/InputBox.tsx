@@ -80,7 +80,6 @@ export default function InputBox({
   const { account } = useWeb3React()
   const logo = useCurrencyLogo(currency?.wrapped.address)
   const currencyBalance = useCurrencyBalance(account ?? undefined, currency ?? undefined)
-
   const [balanceExact, balanceDisplay] = useMemo(() => {
     return [maxAmountSpend(currencyBalance)?.toExact(), currencyBalance?.toSignificant(6)]
   }, [currencyBalance])

@@ -74,7 +74,6 @@ export default function Mint() {
   const debouncedAmountIn = useDebounce(amountIn, 500)
   const libraCurrency = LIBRA_TOKEN
   const usdcCurrency = USDC_TOKEN
-  const deusCurrency = DEUS_TOKEN
   const libraCurrencyBalance = useCurrencyBalance(account ?? undefined, usdcCurrency)
 
   /* const { amountIn, amountOut1, amountOut2, onUserInput, onUserOutput1, onUserOutput2 } = useRedeemAmounts() */

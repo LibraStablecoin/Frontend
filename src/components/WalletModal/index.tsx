@@ -200,7 +200,7 @@ export default function WalletModal({
           />
           <Wrapper>
             {error instanceof UnsupportedChainIdError ? (
-              <div>Please connect to the Fantom network.</div>
+              <div>Please connect to the Polygon network.</div>
             ) : (
               <div>Error connecting. Try refreshing the page.</div>
             )}

@@ -90,10 +90,10 @@ export  function useDeiPrice() : {
     [res]
   )
 
-
+   console.log(reserve1v,reserve0v,price)
 
   return {
-    price: ((price*reserve1v )/ reserve0v)/(10 ** 18),
+    price: ((price*reserve0v )/ reserve1v)/(10 ** 18),
   }
 
     

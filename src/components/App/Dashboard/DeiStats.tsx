@@ -214,7 +214,7 @@ export default function DeiStats() {
             <div onClick={() => handleClick(Dashboard.TOTAL_USDC_RESERVES)}>
               <InfoWrapper>
                 <p>Total Reserves</p>
-                {totalReserves === null ? <Loader /> : <ItemValue>{formatAmount(usdcReserves1, 2)}</ItemValue>}
+                {totalReserves === null ? <Loader /> : <ItemValue>{formatAmount(totalReserves, 2)}</ItemValue>}
               </InfoWrapper>
             </div>
             <div onClick={() => handleClick(Dashboard.USDC_BACKING_FOR_DEI)}>
